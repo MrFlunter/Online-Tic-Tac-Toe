@@ -1,0 +1,7 @@
+@startuml
+class TicTacToe {
+    + str playername
+    + int run_player()
+    + int judge()
+}
+@enduml
