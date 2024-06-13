@@ -3,9 +3,8 @@ from PyQt6.QtWidgets import QWidget, QGridLayout, QPushButton, QMessageBox
 from PyQt6.QtGui import QFont 
 
 class TicTacToe(QWidget):
-    def __init__(self, playername):
+    def __init__(self):
         super().__init__()
-        self.playername = playername
         self.initUI()
         self.board = ['']*9
         self.current_player = 'X'
@@ -55,30 +54,3 @@ class TicTacToe(QWidget):
         for button in self.buttons:
             button.setText('')
 
-"""
-    def run_player(self):
-        host = '127.0.0.1'
-        port = 12345
-        self.s.bind((host, port))
-        self.s.listen(1)
-        conn, addr = self.s.accept()
-        with conn:
-            while True:
-                data = conn.recv(1024)
-                if not data:
-                    break
-                self.handle_data(data.decode())
-
-    def handle_data(self, data):
-        idx, player = map(str, data.split(','))
-        idx = int(idx)
-        self.board[idx] = player
-        self.buttons[idx].setText(player)
-        if self.judge():
-            QMessageBox.information(self, "Game Over", f"{player} wins!")
-            self.reset_game()
-        elif '' not in self.board:
-            QMessageBox.information(self, "Game Over", "It's a draw!")
-            self.reset_game()
-        self.current_player = 'O' if player == 'X' else 'X'
-"""

@@ -4,5 +4,5 @@ from PyQt6.QtWidgets import QApplication
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = TicTacToe("Player 1")
+    ex = TicTacToe()
     sys.exit(app.exec())
